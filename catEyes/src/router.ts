@@ -18,14 +18,14 @@ const router = new Router({
           path: "hot",
           name: "hot",
           component: () =>
-            import("./components/Mkklist.vue"),
+            import(/* webpackChunkName: "about" */ "./components/Mkklist.vue"),
           meta: { title: "猫眼电影", requireAuth: false }
         },
         {
           path: "aa",
           name: "aa",
           component: () =>
-            import("./components/Maalist.vue"),
+            import(/* webpackChunkName: "about" */ "./components/Maalist.vue"),
           meta: { title: "猫眼电影", requireAuth: false }
         }
       ]
@@ -35,14 +35,19 @@ const router = new Router({
       name: "movie",
       meta: { title: "X战警：黑凤凰", requireAuth: false },
       component: () =>
-        import("./views/Movie.vue")
+        import(/* webpackChunkName: "about" */ "./views/Movie.vue")
     },
     {
       path: "/canary",
       name: "canary",
       meta: { title: "X战警：黑凤凰", requireAuth: false },
       component: () =>
-        import("./views/Canary.vue")
+        import(/* webpackChunkName: "about" */ "./views/Canary.vue")
+    },
+    {
+      path: "/",
+      name: "home",
+      component: Home
     },
     {
       path: "/cinema",
@@ -51,30 +56,51 @@ const router = new Router({
       meta: { title: "影院", requireAuth: false }
     },
     {
+      path: "/mseach",
+      name: "mseach",
+      component: () =>
+      import(/* webpackChunkName: "about" */ "./components/Mseach.vue"),
+      meta: { title: "猫眼电影", requireAuth: false }
+    },
+    {
       path: "/detail",
       name: "detail",
       meta: { title: "龙洞巨幕影城", requireAuth: false },
       component: () => import("./components/CinemaDetail.vue")
     },
     {
-      path: "/select",
-      name: "select",
-      meta: { title: "龙洞巨幕影城", requireAuth: true },
-      component: () =>
-        import("./components/CinemaSelect.vue")
-    },
-    {
       path: "/login",
       name: "login",
       meta: { title: "猫眼电影", requireAuth: false },
       component: () =>
-        import("./views/Mlogin.vue")
+        import(/* webpackChunkName: "about" */ "./views/Mlogin.vue")
+    },
+    {
+      path: "/select",
+      name: "select",
+      meta: { title: "龙洞巨幕影城", requireAuth: true },
+      component: () =>
+        import( "./components/CinemaSelect.vue")
+    },
+    {
+      path: "/eat",
+      name: "eat",
+      meta: { title: "确认订单", requireAuth: true },
+      component: () =>
+        import( "./components/EatBuy.vue")
+    },
+    {
+      path: "/createorder",
+      name: "createorder",
+      meta: { title: "支付订单" },
+      component: () => import("./views/Createorder.vue")
     },
     {
       path: "/center/",
       name: "center",
       meta: { title: "我的", requireAuth: true },
-      component: () => import("./views/Mycenter.vue"),
+      component: () =>
+        import(/* webpackChunkName: "about" */ "./views/Mycenter.vue"),
       children: [
         {
           path: "orderList",
@@ -90,19 +116,22 @@ const router = new Router({
           path: "periphery",
           name: "periphery",
           meta: { title: "我的周边商品" },
-          component: () => import("./components/Mperiphery.vue")
+          component: () =>
+            import(/* webpackChunkName: "about" */ "./components/Mperiphery.vue")
         },
         {
           path: "mcanary",
           name: "mcanary",
           meta: { title: "猫眼电影" },
-          component: () => import("./components/Mperiphery.vue")
+          component: () =>
+            import(/* webpackChunkName: "about" */ "./components/Mperiphery.vue")
         },
         {
           path: "coupon",
           name: "coupon",
           meta: { title: "我的优惠券" },
-          component: () => import("./components/Mcoupon.vue")
+          component: () =>
+            import(/* webpackChunkName: "about" */ "./components/Mcoupon.vue")
         },
         {
           path: "discount",
@@ -113,25 +142,14 @@ const router = new Router({
               path: "/card",
               name: "card",
               meta: { title: "影院会员卡" },
-              component: () => import("./components/Mcard.vue")
+              component: () =>
+                import(/* webpackChunkName: "about" */ "./components/Mcard.vue")
             }
           ],
-          component: () => import("./components/Mdiscount.vue")
+          component: () =>
+            import(/* webpackChunkName: "about" */ "./components/Mdiscount.vue")
         }
       ]
-    },
-    {
-      path: "/eat",
-      name: "eat",
-      meta: { title: "确认订单", requireAuth: true },
-      component: () =>
-        import("./components/EatBuy.vue")
-    },
-    {
-      path: "/createorder",
-      name: "createorder",
-      meta: { title: "支付订单" },
-      component: () => import("./views/Createorder.vue")
     }
   ]
 });

@@ -1,5 +1,5 @@
 <template>
-  <section class="movie singleton page active" style="height: 37.6rem">
+  <section class="movie singleton page active" style="height: 37.6rem;">
     <div class="page-wrap">
       <div class="tab-content">
         <div class="page f-hot" data-hot=".f-hot" data-cid="c_3j5p10oz">

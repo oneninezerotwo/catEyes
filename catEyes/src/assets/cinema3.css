@@ -4161,8 +4161,8 @@ body[data-fixmask]:after {
 }
 
 .seat-block .select-block .row-nav div {
-    height: .48rem;
-    line-height: .48rem
+    height: .32rem;
+    line-height: -0.38rem
 }
 
 .seat-block .select-block .seats-wrap {

@@ -1,19 +1,29 @@
 <template>
   <section class="topbar">
-    <div class="white-bg topbar-bg">
+    <div class="white-bg topbar-bg ">
       <div class="city-entry">
         <span class="city-name">广州</span>
         <i class="city-entry-arrow"></i>
       </div>
       <div class="switch-hot" data-active=".n-hot">
-        <div class="hot-item" :class="{ active: index === 1 }" @click="fn(1)" data-tab=".n-hot">
+        <div
+          class="hot-item"
+          :class="{ active: index === 1 }"
+          @click="fn(1)"
+          data-tab=".n-hot"
+        >
           <router-link to="/hot">正在热映</router-link>
         </div>
-        <div class="hot-item" :class="{ active: index === 2 }" @click="fn(2)" data-tab=".f-hot">
+        <div
+          class="hot-item"
+          :class="{ active: index === 2 }"
+          @click="fn(2)"
+          data-tab=".f-hot"
+        >
           <router-link to="/aa">即将上映</router-link>
         </div>
       </div>
-      <div class="search-entry search-icon" data-type="movie"></div>
+      <div class="search-entry search-icon" data-type="movie" @click="seach"></div>
     </div>
   </section>
 </template>
@@ -27,6 +37,10 @@ export default {
   methods: {
     fn(index) {
       this.index = index;
+      console.log(index);
+    },
+    seach(){
+      this.$router.push({ path: "mseach" });
     }
   }
 };
@@ -117,7 +131,6 @@ export default {
   left: 12px;
   left: 3.2vw;
 }
-
 a {
   color: #666;
   text-decoration: none;

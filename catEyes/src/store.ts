@@ -11,7 +11,7 @@ export default new Vuex.Store({
     foot_show: true,
     cinameData1: [],
     select_data: [],
-    ticketPice: 48.9, //电影单张票价
+    ticketPice: 48.9,//电影单张票价
     foodPrice: 0,
     totalPrice: 0,
     isFixedMenu: false,
@@ -19,8 +19,7 @@ export default new Vuex.Store({
   },
   mutations: {
     final(state) {
-      state.totalPrice =
-        state.ticketPice * state.select_data.length + state.foodPrice;
+      state.totalPrice = state.ticketPice * state.select_data.length + state.foodPrice
     },
     setAadd(state) {
       state.leftArrow = 1;

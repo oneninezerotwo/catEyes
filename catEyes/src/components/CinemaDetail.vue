@@ -24,6 +24,12 @@ export default Vue.extend({
   },
   methods: {
     ...mapMutations(["setAadd"])
+  },
+  mounted(){
+    this.$store.state.foot_show=false
+  },
+  destroyed(){
+    this.$store.state.foot_show=true
   }
 });
 </script>

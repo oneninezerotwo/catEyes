@@ -14,8 +14,8 @@
       <div class="local">龙洞巨幕影城</div>
       <div class="seats">
         10号激光厅
-        <div v-for="(t, k) in tickect" :key="k" class="seat">
-          <span>{{ t[0] }}排{{ t[1] }}座</span>&nbsp;&nbsp;
+        <div v-for="(t,k) in tickect" :key="k" class="seat">
+          <span>{{t[0]}}排{{t[1]}}座</span>&nbsp;&nbsp;
         </div>
       </div>
     </div>
@@ -25,10 +25,7 @@
         <div class="flex"></div>
         <div data-bid="dp_wx_order_coupon">
           <span class="blk discount-amount" data-amount="无可用">无可用</span>
-          <span
-            class="discount-desc"
-            data-content="不与其他优惠活动同享"
-          ></span>
+          <span class="discount-desc" data-content="不与其他优惠活动同享"></span>
           <span class="arrow"></span>
         </div>
       </div>
@@ -42,7 +39,7 @@
         <div class="flex"></div>
         <div class="red">
           <span class="icon">¥</span>
-          <span class="paymoney">{{ paymoney }}</span>
+          <span class="paymoney">{{paymoney}}</span>
         </div>
       </div>
     </div>
@@ -51,18 +48,16 @@
 
 <script>
 export default {
-  computed: {
-    tickect() {
-      return this.$store.state.select_data;
-    },
-    paymoney() {
-      return (
+  data() {
+    return {
+      tickect: this.$store.state.select_data,
+      paymoney:
         this.$store.state.select_data.length * this.$store.state.ticketPice
-      );
-    }
+    };
   }
 };
 </script>
+
 
 <style lang="scss" scoped>
 .count-down {

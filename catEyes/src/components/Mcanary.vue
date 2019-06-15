@@ -48,6 +48,7 @@ export default Vue.extend({
   overflow-y: auto;
   color: #555;
   min-width: 9.3rem;
+  //   -webkit-user-select: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   font: 14px/1.5 Arial, Helvetica, sans-serif;
 }

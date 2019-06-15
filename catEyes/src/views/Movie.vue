@@ -1,9 +1,11 @@
 <template>
   <div class="body">
-    <Mmovie/>
+    <Mmovie />
     <Mshowdays/>
     <Mfilter/>
     <CinemaList/>
+    
+    
   </div>
 </template>
 
@@ -22,11 +24,11 @@ export default Vue.extend({
     Mfilter,
     Mshowdays
   },
-  created() {
+   created() {
     this.setAadd();
   },
   methods: {
     ...mapMutations(["setAadd"])
-  }
+  },
 });
 </script>

@@ -1,10 +1,10 @@
 <template>
   <div class="orderlist">
     <div class="pay-section">
-      <OrderDetail />
-      <MovieFood />
+      <OrderDetail/>
+      <MovieFood/>
     </div>
-    <Pricebox />
+    <Pricebox/>
   </div>
 </template>
 
@@ -42,3 +42,5 @@ export default {
   }
 };
 </script>
+
+

@@ -45,7 +45,7 @@
 .order-content {
   flex: 1;
   background: rgb(243, 243, 243);
-  overflow: hidden;
+  overflow: auto;
 
   .order-list {
     .order-item {

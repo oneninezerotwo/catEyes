@@ -4,17 +4,17 @@
       <div>观影标配</div>
       <div class="flex"></div>
       <div class="snacktitle box-flex middle">
-        {{ lists.headTitle }}
+        {{lists.headTitle}}
         <div class="snackicon"></div>
       </div>
     </header>
     <section class="f-list">
       <div
-        v-for="(items, ind) in lists.snackList"
+        v-for="(items,ind) in lists.snackList"
         :key="ind"
         class="f-item mb-outline-t"
         :data-id="items.dealId"
-        :class="ind > 4 ? change : ''"
+        :class="ind>4?change:'' "
       >
         <div class="f-img">
           <img
@@ -22,28 +22,28 @@
             data-page="0"
             :src="items.imageUrl"
             onerror="this.style.display='none'"
-          />
+          >
         </div>
         <div class="f-con">
           <div class="f-name">
             <span class="personNum" v-text="items.titleTag"></span>
-            {{ items.title }}
+            {{items.title}}
           </div>
           <div class="f-recommend-container">
             <div class="f-recommend">
               <div class="recommendicon" v-if="items.recommendTag"></div>
-              <span>{{ items.recommendTag }}</span>
+              <span>{{items.recommendTag}}</span>
             </div>
           </div>
           <div class="f-con-b flex-between">
             <div class="f-price">
               <span class="p-real">
                 <span class="icon">¥</span>
-                {{ items.price }}
+                {{items.price}}
               </span>
               <span class="p-yet">
                 ¥
-                <span>{{ items.value }}</span>
+                <span>{{items.value}}</span>
               </span>
             </div>
             <div class="f-oper">
@@ -59,10 +59,8 @@
       <div
         class="showallsnack mb-outline-t"
         @click="loadMore"
-        :class="change == 'hidden' ? '' : 'hidden'"
-      >
-        查看全部{{ len }}个套餐
-      </div>
+        :class="change=='hidden'?'':'hidden'"
+      >查看全部{{len}}个套餐</div>
     </section>
 
     <footer class="snack-discount-block mb-outline-t">
@@ -72,14 +70,11 @@
         <span class="arrow"></span>
       </div>
     </footer>
-    <footer
-      class="mb-outline-t count-price-container"
-      :class="foodPrice == 0 ? 'hidden' : ''"
-    >
+    <footer class="mb-outline-t count-price-container" :class="foodPrice==0?'hidden':''">
       <div class="f-left">小计</div>
       <div class="f-right">
         <span class="icon">¥</span>
-        <span class="count-price">{{ foodPrice }}</span>
+        <span class="count-price">{{foodPrice}}</span>
       </div>
     </footer>
   </div>
@@ -340,3 +335,4 @@ export default {
   margin-left: -2px;
 }
 </style>
+

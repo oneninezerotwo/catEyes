@@ -1,10 +1,7 @@
 <template>
   <section class="price-section">
     <div class="price-block mb-outline-t">
-      <div
-        class="box-flex"
-        style="margin-bottom:10px;justify-content: space-between;"
-      >
+      <div class="box-flex" style="margin-bottom:10px;justify-content: space-between;">
         <div id="refundmigrateDetail" class="refundmigrateDetail support">
           <span style="color: #FF9900;">退改签须知</span>
           <span class="arrow up"></span>
@@ -20,7 +17,7 @@
         >
           <span class="also">应付:</span>
           <span class="d">¥</span>
-          <span class="last-amount">{{ amount.toFixed(2) }}</span>
+          <span class="last-amount">{{amount.toFixed(2)}}</span>
           <span class="arrow up"></span>
         </div>
       </div>
@@ -38,6 +35,7 @@ export default {
   }
 };
 </script>
+
 
 <style lang="scss" scoped>
 .price-section {
